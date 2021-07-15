@@ -4,6 +4,9 @@
     padding: 0;
     /* box-sizing: border-box; */
 }
+html,body{
+    overflow-x: hidden;
+}
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -21,6 +24,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 42px 140px 49px 156px;
+    flex-wrap: wrap;
 }
 
 .links {
@@ -42,13 +46,13 @@ header {
     background-color: #E02C6D;
     color: white;
     padding: 10px 24px;
-    transition: background 0.7s linear;
+    transition: transform 0.7s linear;
+    display: inline-block;
 }
 
-.btn:hover{
-    background-color: transparent;
-    border: 1px solid #E02C6D;
-}
+.btn:hover {
+    transform: scale(0.9);
+  }
 
 /* Banner section */
 .banner {
@@ -169,7 +173,6 @@ footer{
     margin-top: 158px;
 }
 
-
 footer .image img{
     width: 483.87px;
     height: 110px;
@@ -211,4 +214,55 @@ footer .icons{
     display: block;
     font-size: 17px;
     line-height: 22px;
+}
+
+/* media queries */
+@media only screen and (max-width: 480px) {
+    header{
+        display: none;
+    }
+
+    .banner {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .tournament{
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+    }
+
+    .players{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .match{
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        padding: 0;
+    }
+
+    .newsletter{
+        align-self: center;
+        padding: 0;
+    }
+
+    .video{
+        align-self: center;
+        width: 100%;
+        height: auto;
+        /* overflow-x: hidden; */
+    }
+
+    .image-area img{
+        width: 329px;
+        height: 259.17px;
+        margin-top: 50px;
+    }
+
+    .match-image{
+        margin-top: 30px;
+    }
+
 }
